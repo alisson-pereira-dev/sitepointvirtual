@@ -277,7 +277,7 @@
       "etiqueta": "Novidade",
       "titulo": "Painel de LED",
       "descricao": "Anuncie a sua marca no painel de LED de 2×3 m da Praça do Manteiga.",
-      "descricao_validar": true,
+      "descricao_validar": false,
       "ilustracao": {
         "src": "/assets/video_led-alpha.webm",
         "capa": "/assets/video_led-capa.webp",
@@ -289,7 +289,7 @@
         "src": "/assets/painelled.mp4",
         "capa": "/assets/painelled-capa.jpg",
         "alt": "Vídeo de um anúncio no painel de LED de 2 por 3 metros na Praça do Manteiga, em Muritiba",
-        "alt_validar": true,
+        "alt_validar": false,
         "alt_neutro": "Vídeo de um anúncio de cliente exibido no painel de LED",
         "alternativa_link": "Baixar o vídeo do painel de LED"
       },
@@ -308,17 +308,17 @@
         {
           "rotulo": "Painel 2×3 m na Praça do Manteiga, Muritiba-BA",
           "fonte": "Arte de divulgação no Instagram",
-          "validar": true
+          "validar": false
         },
         {
           "rotulo": "Exibição diária: 300 vezes",
           "fonte": "Arte de divulgação no Instagram",
-          "validar": true
+          "validar": false
         },
         {
           "rotulo": "VT de 20 segundos",
           "fonte": "Arte de divulgação no Instagram",
-          "validar": true
+          "validar": false
         }
       ],
       "cta": "@ctas.principal"
@@ -462,8 +462,8 @@
           "nome": "Loja Manteiga",
           "telefone": "(75) 98122-9911",
           "endereco": null,
-          "fonte": "Arte de calendário no Instagram",
-          "validar": true
+          "fonte": "Arte de calendário no Instagram; exibição confirmada pelo cliente em 13/11/2026 (sem endereço)",
+          "validar": false
         }
       ],
       "cta": "@ctas.principal"
@@ -842,11 +842,6 @@
         "ocorrencias": 1
       },
       {
-        "caminho": "secoes.painel_led.destaques",
-        "motivo": "números e local vêm de uma arte de divulgação (parte do texto cortado no print); confirmar valores atuais",
-        "ocorrencias": 3
-      },
-      {
         "caminho": "secoes.como_funciona",
         "motivo": "processo em 3 passos é o padrão de atendimento deduzido; confirmar com o cliente",
         "ocorrencias": 1
@@ -859,11 +854,6 @@
       {
         "caminho": "secoes.sobre.imagem",
         "motivo": "foto de grupo (feita_pra.jpg) com várias pessoas, uma criança e máscaras (2020–2021): confirmar autorização de imagem e se o grupo é a equipe (o alt não diz 'equipe')",
-        "ocorrencias": 1
-      },
-      {
-        "caminho": "secoes.contato.unidades",
-        "motivo": "2ª loja: nome e telefone lidos de uma arte de calendário e sem endereço. Conferir qual loja é 'Centro' e qual é 'Manteiga' (o Google mostra o 98136-4285 no Centro, e a arte parecia rotular esse número como 'Manteiga')",
         "ocorrencias": 1
       },
       {

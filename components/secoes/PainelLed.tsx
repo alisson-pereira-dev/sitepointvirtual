@@ -11,13 +11,15 @@ const ID_TITULO = "painel-led-titulo";
 export function PainelLed() {
   const painel = getContent().secoes.painel_led;
 
-  // Os textos originais (2×3 m, Praça do Manteiga, 300 exibições, VT de 20 s) são `validar`.
-  // Em produção entram os neutros; só no modo revisão aparecem os originais, sempre com a marca "A validar".
+  // Os textos originais (2×3 m, Praça do Manteiga, 300 exibições, VT de 20 s) aparecem em produção quando o item
+  // não é mais `validar` (confirmados pelo cliente). Item ainda `validar`: em produção entra o neutro; só no modo
+  // revisão aparece o original, com a marca "A validar".
   const revisao = modoRevisao();
-  const descricao = revisao ? painel.descricao : painel.descricao_neutra;
-  const alt = revisao ? painel.midia.alt : painel.midia.alt_neutro;
-  const destaques = revisao
-    ? painel.destaques.map((d) => ({ rotulo: d.rotulo, marca: d.validar ? <MarcaValidar /> : undefined }))
+  const descricao = revisao || !painel.descricao_validar ? painel.descricao : painel.descricao_neutra;
+  const alt = revisao || !painel.midia.alt_validar ? painel.midia.alt : painel.midia.alt_neutro;
+  const destaquesOriginais = revisao || painel.destaques.every((d) => !d.validar);
+  const destaques = destaquesOriginais
+    ? painel.destaques.map((d) => ({ rotulo: d.rotulo, marca: revisao && d.validar ? <MarcaValidar /> : undefined }))
     : painel.destaques_neutros.map((d) => ({ rotulo: d.rotulo }));
 
   return (

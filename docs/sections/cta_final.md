@@ -11,7 +11,7 @@ slug `cta_final` · Ordem 11 · completo · âncora `#orcamento`
 - **Estrutura desktop:** mesmo painel, container estreito, headline em 2 linhas (`--text-display`), CTA centralizado.
 - **Hierarquia:** headline > CTA > subtexto.
 - **Fundo:** `--color-bg-dark`; margem de `--space-section` acima e abaixo.
-- **Build (T2.9):** mesma margem lateral do painel de LED (`--space-3` no mobile, `--gutter-desktop` a partir de 768 px). A headline do JSON tem o marcador `{1}` depois de "marca", onde entra a miniatura única (sem ciclo; `prioridade` desligada, pois está abaixo da dobra). Ordem: headline → subtexto → CTA principal, sem segundo botão e sem informação nova. O espaço de `--section` abaixo do painel separa o CTA do rodapé. A miniatura tem 1 em de altura (≈ 37–39 px no mobile, abaixo dos ~44 px da spec).
+- **Build (T2.9):** mesma margem lateral do painel de LED (`--space-3` no mobile, `--gutter-desktop` a partir de 768 px). A headline do JSON tem o marcador `{1}` depois de "marca", onde entra a miniatura única (alterna as 5 fotos, em todas as larguras; `prioridade` desligada, pois está abaixo da dobra). Ordem: headline → subtexto → CTA principal, sem segundo botão e sem informação nova. O espaço de `--section` abaixo do painel separa o CTA do rodapé. A miniatura tem 1 em de altura (≈ 37–39 px no mobile, abaixo dos ~44 px da spec).
 - **Herdar:** headline em duas linhas com imagem no meio e botão logo abaixo. **Não copiar:** segundo botão.
 ## 5. Componentes
 - Secao (escura, formato painel, id `orcamento`)
@@ -31,9 +31,9 @@ slug `cta_final` · Ordem 11 · completo · âncora `#orcamento`
 
 ## 7. Motion
 - Nível declarado: N1 · Biblioteca: CSS
-- Elementos animados e receita (`09-MOTION`): Painel e frase: R1. Miniatura: entrada e hover como no hero (sem ciclo). Botão: R10.
+- Elementos animados e receita (`09-MOTION`): Painel e frase: R1. Miniatura: entrada, ciclo de fotos e hover como no hero. Botão: R10.
 - **Desktop:** Reveal do painel; miniatura endireita no hover.
-- **Mobile:** Reveal curto; miniatura estática.
+- **Mobile:** Reveal curto; a miniatura alterna as fotos (como no desktop).
 - **Reduced-motion:** Visível, sem inclinação.
 - Fallback se o JS falhar: Frase e botão visíveis.
 - Só `transform` e `opacity`; conteúdo da 1ª dobra nunca fica oculto esperando a animação.

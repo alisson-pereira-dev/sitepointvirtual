@@ -51,7 +51,7 @@
   }
 }
 
-/* Desktop: entrada mais longa, ciclo de fotos e endireitar no hover */
+/* Desktop: entrada mais longa e endireitar no hover (o ciclo de fotos vale em todas as larguras, mais abaixo) */
 @media (min-width: 1024px) {
   .mini {
     animation-duration: var(--dur-slow);
@@ -69,8 +69,10 @@
     box-shadow: var(--shadow-3);
     transform: rotate(0) scale(var(--zoom-hover));
   }
+}
 
-  /* A animação sobrescreve o `opacity: 0` estático das fotos 2 em diante */
+/* Ciclo de fotos em todas as larguras (mobile e desktop), só sem reduced-motion. A animação sobrescreve o `opacity: 0` estático das fotos 2 em diante */
+@media (prefers-reduced-motion: no-preference) {
   .mini[data-n="2"] .foto {
     animation: ciclo-2 var(--ciclo) linear infinite;
     animation-delay: calc(var(--ordem) * var(--ciclo) / var(--n) - var(--ciclo) - var(--atraso));

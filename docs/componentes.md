@@ -100,10 +100,10 @@ Header · MenuMobile · Botao · Secao · Etiqueta · Icone · Midia · Miniatur
 | atraso | ms | não | defasagem do ciclo |
 **Tamanho:** ~1,1 em de altura (≈ 40 px a 360 px; ≈ 64–80 px no desktop); `--radius-sm`; reserva o espaço para não gerar CLS.
 **Estados:** hover (desktop): endireita (`rotate(0)`) e cresce com `scale(var(--zoom-hover))` (2,4 ≈ 180 px) por cima do texto, com `--shadow-3`, `--dur-base` (como o Packhelp, 0,3 s). Active: igual ao hover. Sem foco (decorativa, não interativa).
-**Mobile:** estática, mostra a 1ª foto, sem ciclo.
+**Mobile:** o ciclo de fotos também roda (decisão do cliente); só não há hover. Em `prefers-reduced-motion` fica estática, na 1ª foto.
 **Acessibilidade:** a frase se lê completa sem a miniatura; a miniatura é `aria-hidden` se `alt` não acrescentar informação (decisão do `content.json`: `alt` descritivo, então fica exposta como imagem sem prejudicar a leitura).
-**Motion:** N1 CSS. Entrada: `opacity` + `scale(.8→1)`, `--dur-slow`, escalonada `--stagger-step`. Ciclo (só desktop e `prefers-reduced-motion: no-preference`): crossfade de opacidade, 1,5 s por foto (`--slot`; `--ciclo` = `--slot` × nº de fotos), com defasagem por miniatura (`atraso`); a miniatura é `aria-hidden` (decorativa). Reduced: 1ª foto parada.
-**Não fazer:** animar a headline; usar mais de 3 miniaturas; ciclar no mobile.
+**Motion:** N1 CSS. Entrada: `opacity` + `scale(.8→1)`, `--dur-slow`, escalonada `--stagger-step`. Ciclo (todas as larguras, só com `prefers-reduced-motion: no-preference`): crossfade de opacidade, 1,5 s por foto (`--slot`; `--ciclo` = `--slot` × nº de fotos), com defasagem por miniatura (`atraso`); a miniatura é `aria-hidden` (decorativa). Reduced: 1ª foto parada.
+**Não fazer:** animar a headline; usar mais de 3 miniaturas; ciclar em `prefers-reduced-motion: reduce`.
 
 # Componente — Faixa  (**novo**)
 **Função:** faixa inclinada em marquee (seção `faixa`).

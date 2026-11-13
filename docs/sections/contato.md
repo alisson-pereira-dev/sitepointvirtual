@@ -63,3 +63,5 @@ Específicos:
 - [ ] Telefone em `tel:` · [ ] "Ver no mapa" abre em nova aba com `rel="noopener"` · [ ] seção funciona com 1 unidade só
 ## 11. Status
 completa (pronta para o build; depende dos itens `validar` e dos ativos pendentes)
+- **Loja Manteiga em produção (13/11/2026):** o cliente pediu que apareça como no modo revisão. `validar` virou `false`; o cartão mostra nome e telefone (75) 98122-9911, **sem endereço e sem "Ver no mapa"** (`endereco: null`, pendência em `meta.pendencias_validar`). Conferir ainda qual telefone é de qual loja.
+

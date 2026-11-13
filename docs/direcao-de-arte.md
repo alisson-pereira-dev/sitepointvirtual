@@ -29,7 +29,7 @@ vermelho · vivo · tátil · local · claro · acabamento · direto
 ## Movimento
 - **Nível geral: N1, só CSS.** Sem GSAP, sem Lenis, sem 3D. (O Packhelp também é todo CSS: o ciclo das miniaturas é uma animação CSS e não há scroll suave por biblioteca.)
 - **Tipo:** reveal curto no scroll, faixa em marquee lento, cartões com elevação, abas com transição curta.
-- **Momento de destaque (1 ponto):** o hero, com miniaturas de produto **dentro da frase**: entram escalonadas, alternam entre 2–3 fotos (CSS) e se endireitam no hover. No mobile ficam estáticas, sem alternância. Em `prefers-reduced-motion`, tudo parado. A headline em si **não anima**, para o texto ser o LCP.
+- **Momento de destaque (1 ponto):** o hero, com miniaturas de produto **dentro da frase**: entram escalonadas, alternam entre 2–3 fotos (CSS) e se endireitam no hover. No mobile a alternância também roda (sem o hover). Em `prefers-reduced-motion`, tudo parado. A headline em si **não anima**, para o texto ser o LCP.
 - **Sem:** 3D, scroll suave por biblioteca, pin/scrub.
 
 ## Como o site deve fazer o visitante se sentir
