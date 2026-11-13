@@ -1,0 +1,45 @@
+.secao {
+  padding-block: var(--section);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.alt {
+  background: var(--color-bg-alt);
+}
+
+.escura {
+  background: var(--color-bg);
+}
+
+.painel {
+  margin-inline: var(--space-3);
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 768px) {
+  .painel {
+    margin-inline: var(--gutter-desktop);
+    border-radius: var(--radius-2xl);
+  }
+}
+
+.abaixoDoHeader {
+  padding-block-start: calc(var(--header-h) + var(--space-6));
+}
+
+@media (min-width: 1024px) {
+  .abaixoDoHeader {
+    padding-block-start: calc(var(--header-h-desktop) + var(--space-6));
+  }
+}
+
+.interno {
+  display: block;
+}
+
+.titulo {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+}

@@ -1,0 +1,87 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* Aviso de rascunho: grande, amarelo e logo no topo */
+.aviso {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-lg);
+  background: var(--color-warning);
+  color: var(--color-warning-text);
+}
+
+.avisoTitulo {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+}
+
+.avisoTexto {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.titulo {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
+  text-wrap: balance;
+}
+
+.atualizacao {
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+}
+
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block-start: var(--space-4);
+}
+
+.subtitulo {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+}
+
+.paragrafo,
+.itens {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.itens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-inline-start: var(--space-5);
+  list-style: disc;
+}
+
+/* Campo [A PREENCHER]: impossível de passar batido */
+.pendente {
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  background: var(--color-warning);
+  color: var(--color-warning-text);
+  font-weight: var(--weight-semibold);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.aviso .pendente {
+  background: var(--color-surface);
+}

@@ -1,0 +1,67 @@
+.midia {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.raio-nenhum {
+  border-radius: 0;
+}
+
+.raio-sm {
+  border-radius: var(--radius-sm);
+}
+
+.raio-lg {
+  border-radius: var(--radius-lg);
+}
+
+.raio-xl {
+  border-radius: var(--radius-xl);
+}
+
+/* `--aspecto-midia` permite ao contêiner trocar a proporção por breakpoint (ex.: cartões de serviço 4:3 → 16:10) */
+.p-4-3 {
+  aspect-ratio: var(--aspecto-midia, var(--aspect-4-3));
+}
+
+.p-16-10 {
+  aspect-ratio: var(--aspect-16-10);
+}
+
+.p-1-1 {
+  aspect-ratio: var(--aspect-1-1);
+}
+
+.p-16-9 {
+  aspect-ratio: var(--aspect-16-9);
+}
+
+.p-3-4 {
+  aspect-ratio: var(--aspect-3-4);
+}
+
+.imagem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder honesto: mesma proporção e raio, sem imagem de banco */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-border-strong);
+}
+
+.legenda {
+  padding: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+  text-align: center;
+}

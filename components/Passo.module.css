@@ -1,0 +1,77 @@
+/* Mobile: numeral à esquerda com linha vertical descendo até o próximo numeral; cartão à direita. */
+.passo {
+  display: grid;
+  grid-template-columns: var(--space-7) minmax(0, 1fr);
+  column-gap: var(--space-4);
+}
+
+.cabeca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numero {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
+}
+
+/* A margem negativa leva a linha até perto do numeral do próximo passo (atravessa o espaço entre itens) */
+.linha {
+  flex: 1;
+  width: 0;
+  margin-block: var(--space-2) calc(var(--space-2) - var(--space-5));
+  border-inline-start: 2px solid var(--color-border-strong);
+}
+
+.passo:last-child .linha {
+  display: none;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+}
+
+.titulo {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+}
+
+.descricao {
+  color: var(--color-text-muted);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Desktop: numerais em linha, ligados por uma linha horizontal; cartões de mesma altura abaixo */
+@media (min-width: 1024px) {
+  .passo {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    row-gap: var(--space-4);
+  }
+
+  .cabeca {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .linha {
+    width: auto;
+    height: 0;
+    margin-block: 0;
+    margin-inline: var(--space-4) calc(var(--space-3) - var(--space-5));
+    border-inline-start: 0;
+    border-block-start: 2px solid var(--color-border-strong);
+  }
+}

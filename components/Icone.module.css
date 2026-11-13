@@ -1,0 +1,40 @@
+.icone {
+  flex: none;
+  display: inline-block;
+}
+
+.sm {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.md {
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+.lg {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+
+.xl {
+  width: var(--icon-xl);
+  height: var(--icon-xl);
+}
+
+.direita {
+  transform: none;
+}
+
+.esquerda {
+  transform: rotate(180deg);
+}
+
+.baixo {
+  transform: rotate(90deg);
+}
+
+.cima {
+  transform: rotate(-90deg);
+}

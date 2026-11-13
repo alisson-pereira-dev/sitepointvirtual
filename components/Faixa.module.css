@@ -1,0 +1,116 @@
+/* Faixa inclinada (~−1,5°) em marquee. Base = versão estática (sem JS e reduced-motion):
+   itens parados, centralizados, em linha. O marquee só liga com html.js + sem reduced-motion. */
+
+.faixa {
+  /* Corta as pontas da faixa inclinada: nada de rolagem horizontal da página */
+  overflow-x: clip;
+  padding-block: var(--space-5);
+}
+
+.banda {
+  display: flex;
+  align-items: center;
+  min-height: var(--space-7);
+  margin-inline: calc(var(--space-6) * -1);
+  overflow: hidden;
+  background: var(--color-primary-subtle);
+  color: var(--color-text);
+  transform: rotate(calc(var(--tilt) * -0.1875));
+}
+
+.trilho {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.grupo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-6);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding-inline-end: var(--space-5);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-small);
+  white-space: nowrap;
+}
+
+/* Separador: ponto desenhado em CSS (sem texto fixo) */
+.item::after {
+  content: "";
+  flex: none;
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+/* Estático: sem repetições nem cópia, sem separador depois do último */
+.repeticao,
+.copia {
+  display: none;
+}
+
+.item[data-ultimo]::after {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .item {
+    font-size: var(--text-body);
+  }
+}
+
+/* Marquee: html.js + movimento permitido */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.js) .trilho {
+    justify-content: flex-start;
+    width: max-content;
+    animation: marquee var(--marquee-duration) linear infinite;
+    will-change: transform;
+  }
+
+  :global(html.js) .grupo {
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+
+  :global(html.js) .repeticao {
+    display: inline-flex;
+  }
+
+  :global(html.js) .copia {
+    display: flex;
+  }
+
+  :global(html.js) .item[data-ultimo]::after {
+    display: block;
+  }
+
+  /* Pausa: fora da viewport, ao toque e com foco dentro. Em hover (mouse) não pausa: o JS só reduz a velocidade
+     (`--marquee-velocidade-hover`), sem salto na posição. */
+  .faixa[data-fora="true"] .trilho,
+  .faixa[data-pausada="true"] .trilho,
+  .faixa:focus-within .trilho {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

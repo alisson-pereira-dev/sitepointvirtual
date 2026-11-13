@@ -1,0 +1,161 @@
+/* Pular para o conteúdo: 1º foco da página */
+.pular {
+  position: fixed;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  transform: translateY(-300%);
+}
+
+.pular:focus-visible {
+  transform: translateY(0);
+}
+
+/* Header fixo. Fundo e borda vivem num pseudo-elemento para animar só `opacity`. */
+.cabecalho {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--z-sticky);
+}
+
+.cabecalho::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-block-end: 1px solid var(--color-border);
+  background: var(--color-bg);
+  pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+/* Com JS: transparente no topo; fundo e borda entram depois de ~8 px de rolagem. */
+:global(html.js) .cabecalho[data-scrolled="false"]::before {
+  opacity: 0;
+}
+
+/* Sem JS o header já vem com fundo e todos os links; sai do modo fixo para a nav em linha caber. */
+:global(html:not(.js)) .cabecalho {
+  position: relative;
+}
+
+.barra {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--header-h);
+}
+
+/* Sem JS a nav inline ocupa uma segunda linha */
+:global(html:not(.js)) .barra {
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+}
+
+.logoMidia {
+  width: auto;
+  height: calc(var(--space-6) - var(--space-1));
+}
+
+@media (min-width: 1024px) {
+  .logoMidia {
+    height: var(--space-6);
+  }
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Navegação */
+.lista {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  color: var(--color-text);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link[aria-current="location"] {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 3px;
+  text-underline-offset: var(--space-2);
+}
+
+/* Barra (desktop): visível ≥ 1024 px; no mobile some quando há JS (o menu assume) e vira linha sem JS. */
+.navBarra {
+  display: none;
+}
+
+:global(html:not(.js)) .navBarra {
+  display: block;
+  order: 3;
+  flex-basis: 100%;
+}
+
+:global(html:not(.js)) .navBarra .lista {
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+}
+
+@media (min-width: 1024px) {
+  .cabecalho,
+  .barra {
+    min-height: var(--header-h-desktop);
+  }
+
+  .navBarra,
+  :global(html:not(.js)) .navBarra {
+    display: block;
+    order: 0;
+    flex-basis: auto;
+  }
+
+  .navBarra .lista {
+    gap: var(--space-5);
+  }
+
+  :global(html:not(.js)) .cabecalho {
+    position: fixed;
+  }
+}
+
+/* Painel do menu mobile: links grandes (Sora) */
+.navPainel .lista {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.navPainel .link {
+  width: 100%;
+  min-height: calc(var(--space-7) + var(--space-2));
+  border-block-end: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-h2);
+}

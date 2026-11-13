@@ -1,0 +1,54 @@
+.cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+}
+
+.nome {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+}
+
+/* `address` sem itálico */
+.linhas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-style: normal;
+}
+
+/* Linha com ícone e alvo ≥ 48 px */
+.linha {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--space-7);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.linha svg {
+  color: var(--color-primary);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-7);
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: var(--space-1);
+}
+
+/* "Ver no mapa" alinhado ao texto das linhas (depois do ícone) */
+.linhas .mapa {
+  min-height: var(--space-7);
+  border-width: 0;
+  margin-inline-start: calc(var(--icon-lg) + var(--space-3));
+}

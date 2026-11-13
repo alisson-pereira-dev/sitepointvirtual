@@ -1,0 +1,101 @@
+/* Mobile/tablet: carrossel nativo com snap. A fileira vaza até a borda da tela
+   (margem negativa + padding do gutter) para mostrar a pontinha do próximo cartão. */
+.regiao {
+  margin-inline: calc(var(--gutter-mobile) * -1);
+  padding-inline: var(--gutter-mobile);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter-mobile);
+  scrollbar-width: none;
+}
+
+.regiao::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .regiao {
+    scroll-behavior: smooth;
+  }
+}
+
+.lista {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.lista > li {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .regiao {
+    margin-inline: calc(var(--gutter-desktop) * -1);
+    padding-inline: var(--gutter-desktop);
+    scroll-padding-inline: var(--gutter-desktop);
+  }
+
+  .lista {
+    gap: var(--space-5);
+  }
+
+  .lista > li {
+    flex-basis: 45%;
+  }
+}
+
+/* Controles: indicador à esquerda, seta à direita (só onde há carrossel e JS) */
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: var(--space-5);
+}
+
+:global(html:not(.js)) .controles {
+  display: none;
+}
+
+.pontos {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.ponto {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.ponto[data-ativo] {
+  background: var(--color-primary);
+  transform: scale(1.5);
+}
+
+/* Desktop: vira grade; 4 itens em 4 colunas, 2 itens em 2 colunas com foto 16:10 */
+@media (min-width: 1024px) {
+  .regiao {
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .lista {
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .lista[data-colunas="2"] {
+    --aspecto-midia: var(--aspect-16-10);
+  }
+
+  .controles {
+    display: none;
+  }
+}

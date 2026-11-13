@@ -1,0 +1,15 @@
+/* A animação tem fundo transparente: o desenho fica direto sobre a página e a linha do chão encosta no topo do painel. */
+.moldura {
+  position: relative;
+  width: min(100%, calc(var(--space-10) * 4));
+}
+
+/* Recorte: tira as faixas vazias do quadro (em cima e embaixo) para o chão ficar rente à borda do painel. */
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--aspect-palco-led);
+  object-fit: cover;
+  object-position: 50% 56%;
+}

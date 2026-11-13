@@ -1,0 +1,152 @@
+/* Base global. Só tokens de design-tokens.css; nenhum valor visual literal. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 100%;
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Âncoras de seção e foco por teclado (Shift+Tab sobe a página) param abaixo do header fixo: o foco nunca fica
+   escondido atrás dele (WCAG 2.4.11). `scroll-padding` vale para os dois casos; o landing das âncoras não mudou. */
+html {
+  scroll-padding-top: var(--header-h);
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: var(--header-h-desktop);
+  }
+}
+
+/* Reveal de entrada (R1/R2): só opacity + transform; só com html.js-motion; nunca com reduced-motion.
+   `data-reveal` anima o próprio elemento; `data-reveal-filhos` anima os filhos diretos, escalonados.
+   Desktop: distância cheia, --dur-slow, --stagger-step. Mobile: metade da distância, --dur-base, sem escalonar (reveal por grupo). */
+html.js-motion {
+  --rv-dist: var(--reveal-distance);
+  --rv-dur: var(--dur-slow);
+  --rv-step: var(--stagger-step);
+}
+
+@media (max-width: 767px) {
+  html.js-motion {
+    --rv-dist: calc(var(--reveal-distance) / 2);
+    --rv-dur: var(--dur-base);
+    --rv-step: 0ms;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js-motion [data-reveal],
+  html.js-motion [data-reveal-filhos] > * {
+    transition:
+      opacity var(--rv-dur) var(--ease-out),
+      transform var(--rv-dur) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--rv-step));
+  }
+
+  html.js-motion [data-reveal]:not([data-revealed]),
+  html.js-motion [data-reveal-filhos]:not([data-revealed]) > * {
+    opacity: 0;
+    transform: translateY(var(--rv-dist));
+  }
+}
+
+[data-reveal-filhos] > :nth-child(2) { --i: 1; }
+[data-reveal-filhos] > :nth-child(3) { --i: 2; }
+[data-reveal-filhos] > :nth-child(4) { --i: 3; }
+[data-reveal-filhos] > :nth-child(5) { --i: 4; }
+[data-reveal-filhos] > :nth-child(6) { --i: 5; }
+[data-reveal-filhos] > :nth-child(7) { --i: 6; }
+[data-reveal-filhos] > :nth-child(8) { --i: 7; }
+
+/* Texto só para leitor de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Container padrão (Secao e Header) */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--gutter-desktop);
+  }
+}

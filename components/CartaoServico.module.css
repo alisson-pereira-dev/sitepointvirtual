@@ -1,0 +1,45 @@
+.cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.foto img {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.nome {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+  text-decoration: underline transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: var(--space-1);
+}
+
+.descricao {
+  color: var(--color-text-muted);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Desktop com mouse: zoom 1,03 na foto e sublinhado no nome (reduced-motion: sem zoom) */
+@media (hover: hover) and (pointer: fine) {
+  .cartao:hover .nome {
+    text-decoration-color: var(--color-primary);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cartao:hover .foto img {
+    transform: scale(1.03);
+  }
+}
+
+/* Toque: o cartão afunda um pouco */
+.cartao:active {
+  transform: scale(0.98);
+  transition-duration: var(--dur-instant);
+}

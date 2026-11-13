@@ -1,0 +1,90 @@
+/* Gatilho: só mobile/tablet; sem JS não existe (a nav inline assume). */
+.gatilho {
+  display: inline-flex;
+  flex: none; /* em 320 px o header aperta: o alvo de toque do menu não pode encolher abaixo de 44 px */
+}
+
+@media (min-width: 1024px) {
+  .gatilho {
+    display: none;
+  }
+}
+
+:global(html:not(.js)) .gatilho {
+  display: none;
+}
+
+.fundo {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: var(--color-overlay);
+}
+
+/* Painel de tela cheia */
+.painel {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.painel[data-state="open"] {
+  animation: painel-entra var(--dur-base) var(--ease-out) both;
+}
+
+.painel[data-state="closed"] {
+  animation: painel-sai var(--dur-base) var(--ease-in) both;
+}
+
+.topo {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-h);
+}
+
+.corpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: var(--space-5) var(--space-7);
+}
+
+@keyframes painel-entra {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes painel-sai {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .painel[data-state="open"],
+  .painel[data-state="closed"] {
+    animation: none;
+  }
+}

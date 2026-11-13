@@ -1,0 +1,55 @@
+/* Mobile: título e subtexto → CTA (largura total) → um cartão por unidade.
+   Desktop: texto e CTA à esquerda (5/12), cartões empilhados à direita (7/12). */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.titulo {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  text-wrap: balance;
+}
+
+.subtexto {
+  max-width: 40rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+}
+
+.cta {
+  display: flex;
+  margin-block-start: var(--space-2);
+}
+
+.unidades {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .grade {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-7);
+    align-items: start;
+  }
+
+  .texto {
+    grid-column: 1 / span 5;
+  }
+
+  .unidades {
+    grid-column: 6 / span 7;
+    gap: var(--space-5);
+  }
+}

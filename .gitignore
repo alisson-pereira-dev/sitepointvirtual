@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+.next-check
+
+# Arquivos-fonte de vídeo (com alfa), só para gerar os WebM; não vão para o site nem para o repositório
+*.mov

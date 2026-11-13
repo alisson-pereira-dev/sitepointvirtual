@@ -1,0 +1,142 @@
+/* Rodapé estático (N0): sem animação. Mobile: logo → descrição → Instagram → 2 colunas de links → legais e copyright empilhados.
+   Desktop: marca à esquerda (4/12), 2 colunas de links à direita; linha final com legais à esquerda e copyright à direita. */
+.rodape {
+  padding-block: var(--space-8) var(--space-6);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-7);
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+}
+
+.logoMidia {
+  width: auto;
+  height: var(--space-7);
+}
+
+.descricao {
+  max-width: 28rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+}
+
+.colunas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.tituloColuna {
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-small);
+  letter-spacing: var(--tracking-body);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Alvo de toque ≥ 44 px; o sublinhado aparece também no foco, não só no hover */
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  padding-block: var(--space-1);
+  color: var(--color-text);
+  font-size: var(--text-body);
+  line-height: var(--leading-small);
+  text-decoration: none;
+  min-width: var(--touch-min);
+}
+
+.link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    text-decoration: underline;
+  }
+}
+
+.base {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-start: var(--space-7);
+  padding-block-start: var(--space-5);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.legais {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright {
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+}
+
+@media (min-width: 768px) {
+  .legais {
+    flex-direction: row;
+    gap: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .topo {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-7);
+  }
+
+  .marca {
+    grid-column: 1 / span 4;
+  }
+
+  .colunas {
+    grid-column: 7 / span 6;
+    gap: var(--space-7);
+  }
+
+  .base {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

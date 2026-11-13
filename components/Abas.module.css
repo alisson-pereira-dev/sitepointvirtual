@@ -1,0 +1,110 @@
+/* Trilho em pílula; no mobile rola na horizontal e a última aba aparece cortada (há mais) */
+.lista {
+  display: flex;
+  gap: var(--space-1);
+  max-width: 100%;
+  padding: var(--space-1);
+  overflow-x: auto;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  scrollbar-width: none;
+}
+
+.lista::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .lista {
+    width: fit-content;
+  }
+}
+
+.aba {
+  flex: none;
+  min-height: var(--touch-min);
+  padding-inline: var(--space-5);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-small);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.aba[data-state="active"] {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+}
+
+/* O anel de foco fica por dentro: o trilho rola e cortaria um anel externo */
+.aba:focus-visible {
+  outline-offset: -3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .aba[data-state="inactive"]:hover {
+    background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  }
+}
+
+.aba:active {
+  transform: scale(0.98);
+}
+
+/* Painéis empilhados na mesma célula: a altura é a do maior grupo */
+.paineis {
+  display: grid;
+  margin-block-start: var(--space-6);
+}
+
+.painel {
+  grid-area: 1 / 1;
+  min-width: 0;
+  transition:
+    opacity var(--dur-fast) var(--ease-standard),
+    visibility 0s linear 0s;
+}
+
+.painel[data-state="inactive"] {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--dur-fast) var(--ease-standard),
+    visibility 0s linear var(--dur-fast);
+}
+
+.rotuloGrupo {
+  display: none;
+  margin-block-end: var(--space-4);
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+}
+
+/* Sem JS: sem abas; os 3 grupos viram uma lista contínua, cada um com seu rótulo */
+:global(html:not(.js)) .lista {
+  display: none;
+}
+
+:global(html:not(.js)) .paineis {
+  display: block;
+  margin-block-start: 0;
+}
+
+:global(html:not(.js)) .painel,
+:global(html:not(.js)) .painel[data-state="inactive"] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  margin-block-end: var(--space-7);
+}
+
+:global(html:not(.js)) .rotuloGrupo {
+  display: block;
+}

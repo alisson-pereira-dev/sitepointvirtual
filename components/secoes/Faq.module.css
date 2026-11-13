@@ -1,0 +1,31 @@
+/* Mobile: título acima do accordion (largura total). Desktop: título à esquerda (5/12, fixo ao rolar), accordion à direita (7/12). */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.titulo {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  text-wrap: balance;
+}
+
+@media (min-width: 1024px) {
+  .grade {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-7);
+    align-items: start;
+  }
+
+  .titulo {
+    position: sticky;
+    top: calc(var(--header-h-desktop) + var(--space-5));
+    grid-column: 1 / span 5;
+  }
+
+  .grade > :last-child {
+    grid-column: 6 / span 7;
+  }
+}

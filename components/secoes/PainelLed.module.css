@@ -1,0 +1,121 @@
+/* Mobile: título → descrição → foto → destaques → CTA (largura total).
+   Desktop: texto à esquerda (5/12), foto à direita (7/12), centralizados na vertical.
+   As linhas 1fr nas pontas absorvem a altura extra da foto; o texto fica no centro. */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--space-5);
+}
+
+/* Palco da animação: só no mobile (abaixo de 768 px). Mesma margem lateral do painel (`Secao` formato painel); a base
+   encosta no topo da seção (0 px). Do tablet para cima some (`display: none`: o vídeo nunca toca nem baixa). */
+.palco {
+  display: flex;
+  justify-content: center;
+  margin-inline: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .palco {
+    display: none;
+  }
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* Etiqueta "Novidade": amarela (o vermelho é só do CTA), maior que a etiqueta comum e levemente inclinada.
+   A inclinação usa `--tilt` (vira 0 em reduced-motion). */
+.etiqueta {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  line-height: var(--leading-h3);
+  text-transform: uppercase;
+  box-shadow: var(--shadow-2);
+  transform: rotate(calc(var(--tilt) * -0.375));
+  transform-origin: left center;
+}
+
+.titulo {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  text-wrap: balance;
+}
+
+.descricao {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+}
+
+/* Vídeo vertical (9:16) preenchendo o espaço 4:3 da foto: amplia até cobrir e corta o excesso em cima e embaixo.
+   `object-position` mantém no quadro a parte do meio, onde fica a tela do painel. */
+.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--aspect-4-3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.lista {
+  color: var(--color-text-muted);
+}
+
+.cta {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .grade {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: 1fr repeat(4, auto) 1fr;
+    column-gap: var(--space-7);
+    row-gap: 0;
+  }
+
+  .cabecalho,
+  .descricao,
+  .lista,
+  .cta {
+    grid-column: 1 / span 5;
+  }
+
+  .cabecalho {
+    grid-row: 2;
+  }
+
+  .descricao {
+    grid-row: 3;
+    margin-block-start: var(--space-4);
+  }
+
+  .lista {
+    grid-row: 4;
+    margin-block-start: var(--space-5);
+  }
+
+  .cta {
+    grid-row: 5;
+    margin-block-start: var(--space-6);
+  }
+
+  .foto {
+    grid-column: 6 / span 7;
+    grid-row: 1 / span 6;
+    align-self: center;
+  }
+}

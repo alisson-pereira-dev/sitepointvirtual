@@ -1,0 +1,906 @@
+{
+  "site": {
+    "nome": "Point Virtual",
+    "slogan": "Informática, Gráfica Rápida e Comunicação Visual",
+    "lang": "pt-BR",
+    "dominio": "pendente",
+    "contato": {
+      "whatsapp": {
+        "numero": "pendente",
+        "link": "https://wa.link/kww6uf",
+        "mensagem_padrao": "Olá! Vim pelo site da Point Virtual e quero fazer um orçamento.",
+        "fonte": "Link da bio do Instagram",
+        "validar": true
+      },
+      "telefone": "(75) 98136-4285",
+      "endereco": {
+        "logradouro": "R. Otávio Tosta - Centro",
+        "cidade": "Muritiba",
+        "uf": "BA",
+        "cep": "44340-000",
+        "fonte": "Ficha da empresa no Google (print enviado pelo usuário)"
+      }
+    },
+    "redes": {
+      "instagram": "https://www.instagram.com/pointcomunvisual/"
+    },
+    "ctas": {
+      "principal": {
+        "texto": "Pedir orçamento no WhatsApp",
+        "destino": "https://wa.link/kww6uf",
+        "tipo": "whatsapp"
+      },
+      "variantes": {
+        "header": {
+          "texto": "Pedir orçamento",
+          "mensagem": "Olá! Vim pelo site da Point Virtual e quero pedir um orçamento."
+        },
+        "404": {
+          "texto": "Pedir orçamento",
+          "mensagem": "Olá! Vim pelo site da Point Virtual e quero pedir um orçamento."
+        },
+        "hero": {
+          "texto": "Pedir orçamento no WhatsApp",
+          "mensagem": "Olá! Vim pelo site da Point Virtual e quero pedir um orçamento."
+        },
+        "painel": {
+          "texto": "Anunciar no painel de LED",
+          "aria_label": "Anunciar no painel de LED, abre o WhatsApp",
+          "mensagem": "Olá! Vim pelo site e quero saber como anunciar no painel de LED."
+        },
+        "contato": {
+          "texto": "Chamar no WhatsApp",
+          "mensagem": "Olá! Vim pelo site e gostaria de falar com a Point Virtual."
+        },
+        "final": {
+          "texto": "Quero o meu orçamento",
+          "aria_label": "Quero o meu orçamento, abre o WhatsApp",
+          "mensagem": "Olá! Vim pelo site da Point Virtual e quero pedir um orçamento."
+        }
+      },
+      "secundario": {
+        "texto": "Ver o que fazemos",
+        "destino": "#servicos",
+        "tipo": "ancora"
+      }
+    },
+    "menu": [
+      {
+        "rotulo": "Serviços",
+        "destino": "#servicos"
+      },
+      {
+        "rotulo": "Painel de LED",
+        "destino": "#painel-led"
+      },
+      {
+        "rotulo": "Como funciona",
+        "destino": "#como-funciona"
+      },
+      {
+        "rotulo": "Trabalhos",
+        "destino": "#trabalhos"
+      },
+      {
+        "rotulo": "Contato",
+        "destino": "#contato"
+      }
+    ],
+    "logo": {
+      "src": "/assets/point-virtual-logo.svg",
+      "alt": "Point Virtual – Gráfica e Comunicação Visual",
+      "largura": 1048,
+      "altura": 452,
+      "provisorio": true
+    }
+  },
+  "seo": {
+    "home": {
+      "titulo": "Point Virtual | Gráfica e Comunicação Visual em Muritiba, BA",
+      "descricao": "Gráfica rápida e comunicação visual em Muritiba, Cachoeira e Recôncavo Baiano: letreiros, fachadas, plotagem veicular, acrílico, painel de LED e brindes.",
+      "og_imagem": {
+        "src": "pendente",
+        "alt": "Point Virtual – Gráfica e Comunicação Visual"
+      },
+      "schema": {
+        "tipo": "LocalBusiness",
+        "campos": {
+          "name": "Point Virtual",
+          "description": "Gráfica rápida e comunicação visual.",
+          "telephone": "+55 75 98136-4285",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Otávio Tosta - Centro",
+            "addressLocality": "Muritiba",
+            "addressRegion": "BA",
+            "postalCode": "44340-000",
+            "addressCountry": "BR"
+          },
+          "areaServed": [
+            "Muritiba",
+            "Cachoeira",
+            "Recôncavo Baiano"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/pointcomunvisual/"
+          ]
+        }
+      }
+    }
+  },
+  "secoes": {
+    "hero": {
+      "etiqueta": "Gráfica e comunicação visual · Muritiba, Cachoeira e Recôncavo",
+      "headline": "Sua marca {1} bem vista, do {2} letreiro ao {3} brinde.",
+      "subheadline": "Letreiros, fachadas, plotagem, acrílico, painel de LED e brindes, com criação da arte e instalação.",
+      "cta": "@ctas.principal",
+      "cta_secundario": "@ctas.secundario",
+      "midias_miniatura": {
+        "fotos": [
+          {
+            "src": "/assets/hero_image_gif00.jpg",
+            "alt": "Fachada de loja com letreiro luminoso e vitrine"
+          },
+          {
+            "src": "/assets/hero_image_gif01.jpg",
+            "alt": "Panfletos empilhados com arte de oferta de pastel"
+          },
+          {
+            "src": "/assets/hero_image_gif02.jpg",
+            "alt": "Caneca personalizada com nome e ilustrações"
+          },
+          {
+            "src": "/assets/hero_image_gif03.jpg",
+            "alt": "Capelinhas de MDF com imagem de Santo Antônio"
+          },
+          {
+            "src": "/assets/hero_image_gif04.jpg",
+            "alt": "Boneco personalizado em 3D de homem de terno"
+          }
+        ],
+        "inicio": [0, 2, 4]
+      },
+      "prova_rapida": {
+        "texto": "+ de 15 anos de excelência gráfica e visual",
+        "fonte": "Bio do Instagram @pointcomunvisual",
+        "validar": true
+      }
+    },
+    "faixa": {
+      "itens": [
+        "Criação da arte e instalação",
+        "Cachoeira · Muritiba · Recôncavo Baiano",
+        "Gráfica rápida e comunicação visual"
+      ]
+    },
+    "servicos": {
+      "titulo": "O que a Point Virtual faz pela sua marca",
+      "subtitulo": "Escolha pelo que você precisa. Se não encontrar, chame no WhatsApp e conte o que procura.",
+      "grupos": [
+        {
+          "id": "negocio",
+          "rotulo": "Para o seu negócio"
+        },
+        {
+          "id": "eventos",
+          "rotulo": "Eventos e premiações"
+        },
+        {
+          "id": "presentes",
+          "rotulo": "Presentes e personalizados"
+        }
+      ],
+      "itens": [
+        {
+          "nome": "Letreiros e fachadas",
+          "grupo": "negocio",
+          "descricao": "Letreiro em PVC expandido, lona, ACM e letras em acrílico para a frente da sua loja ser vista de longe.",
+          "imagem": {
+            "src": "/assets/posn_00.jpg",
+            "alt": "Fachada de academia com letreiro em letras 3D amarelas e cinza sobre painel escuro"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Plotagem em vidro e adesivos",
+          "grupo": "negocio",
+          "descricao": "Plotagem em portas de vidro e adesivos.",
+          "imagem": {
+            "src": "/assets/posn_adesivo_01.jpg",
+            "alt": "Adesivos quadrados amarelos com ilustrações de personagens, um deles com a ponta descolando"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Placas e sinalização",
+          "grupo": "negocio",
+          "descricao": "Placas de aviso, numeração de imóvel e placas Pix com QR Code em acrílico para o balcão.",
+          "imagem": {
+            "src": "/assets/posn_placas_02.jpg",
+            "alt": "Placas de sinalização espalhadas: pare, saída, proibido fumar, homens e mulheres"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Plotagem e placas para veículos",
+          "grupo": "negocio",
+          "descricao": "Plotagem veicular e placas personalizadas para carro e moto.",
+          "imagem": {
+            "src": "/assets/posn_pplotagem_03.jpg",
+            "alt": "Carro compacto com plotagem veicular em azul, laranja e verde"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Troféus em acrílico",
+          "grupo": "eventos",
+          "descricao": "Troféus em acrílico para corridas e eventos.",
+          "imagem": {
+            "src": "/assets/posn_trofeu_04.jpg",
+            "alt": "Troféu transparente com base azul e texto de reconhecimento"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Copos, garrafas e brindes",
+          "grupo": "eventos",
+          "descricao": "Copos, garrafas e brindes personalizados com a sua marca.",
+          "imagem": {
+            "src": "/assets/posn_copos_06.jpg",
+            "alt": "Dois copos longos foscos com degradê rosa, personalizados com nome e frase de festa"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Personalizados em acrílico",
+          "grupo": "presentes",
+          "descricao": "Chaveiros gravados, calendários com ímã, placas de nome e enfeites em acrílico.",
+          "imagem": {
+            "src": "/assets/posn_chaveiro_05.jpg",
+            "alt": "Chaveiros de acrílico em vários formatos e desenhos, amontoados"
+          },
+          "validar": false
+        },
+        {
+          "nome": "Seu mini eu em 3D",
+          "grupo": "presentes",
+          "descricao": "Bonecos personalizados feitos a partir da sua foto, para guardar um momento. Encomenda pelo direct do Instagram.",
+          "imagem": {
+            "src": "/assets/posn_mini3d_07.jpg",
+            "alt": "Boneco personalizado em 3D de homem de terno azul, segurado na mão"
+          },
+          "validar": false
+        }
+      ]
+    },
+    "painel_led": {
+      "etiqueta": "Novidade",
+      "titulo": "Painel de LED",
+      "descricao": "Anuncie a sua marca no painel de LED de 2×3 m da Praça do Manteiga.",
+      "descricao_validar": true,
+      "ilustracao": {
+        "src": "/assets/video_led-alpha.webm",
+        "capa": "/assets/video_led-capa.webp",
+        "alt": "Animação em traço de uma praça com um painel de LED mostrando um pão fumegante, enquanto um carro passa e o motorista acena"
+      },
+      "descricao_neutra": "Anuncie a sua marca no painel de LED. Chame no WhatsApp e peça os detalhes.",
+      "midia": {
+        "tipo": "video",
+        "src": "/assets/painelled.mp4",
+        "capa": "/assets/painelled-capa.jpg",
+        "alt": "Vídeo de um anúncio no painel de LED de 2 por 3 metros na Praça do Manteiga, em Muritiba",
+        "alt_validar": true,
+        "alt_neutro": "Vídeo de um anúncio de cliente exibido no painel de LED",
+        "alternativa_link": "Baixar o vídeo do painel de LED"
+      },
+      "destaques_neutros": [
+        {
+          "rotulo": "Anúncio da sua marca no painel de LED"
+        },
+        {
+          "rotulo": "Tamanho, exibições e duração confirmados junto com o orçamento"
+        },
+        {
+          "rotulo": "Pedido e atendimento direto pelo WhatsApp"
+        }
+      ],
+      "destaques": [
+        {
+          "rotulo": "Painel 2×3 m na Praça do Manteiga, Muritiba-BA",
+          "fonte": "Arte de divulgação no Instagram",
+          "validar": true
+        },
+        {
+          "rotulo": "Exibição diária: 300 vezes",
+          "fonte": "Arte de divulgação no Instagram",
+          "validar": true
+        },
+        {
+          "rotulo": "VT de 20 segundos",
+          "fonte": "Arte de divulgação no Instagram",
+          "validar": true
+        }
+      ],
+      "cta": "@ctas.principal"
+    },
+    "como_funciona": {
+      "titulo": "Pedir é simples",
+      "validar": true,
+      "passos": [
+        {
+          "numero": 1,
+          "titulo": "Conte o que precisa",
+          "descricao": "Chame no WhatsApp e explique o que você quer produzir, com medidas e fotos se tiver."
+        },
+        {
+          "numero": 2,
+          "titulo": "Definimos arte e material",
+          "descricao": "A equipe da Point Virtual combina com você o material, o formato e a arte."
+        },
+        {
+          "numero": 3,
+          "titulo": "Produção e instalação",
+          "descricao": "Produzimos a peça e, quando for fachada ou plotagem, fazemos a instalação."
+        }
+      ]
+    },
+    "portfolio": {
+      "titulo": "Alguns dos nossos trabalhos",
+      "subtitulo": "Peças reais da Point Virtual, do balcão à fachada.",
+      "itens": [
+        {
+          "nome": "Letreiro em PVC expandido",
+          "categoria": "Fachadas",
+          "descricao": "Letreiro aplicado na fachada de uma loja.",
+          "imagem": {
+            "src": "/assets/ant_pvc_04.jpg",
+            "alt": "Fachada de loja de calçados com letreiro amarelo e letras azuis em relevo, sobre toldo azul"
+          },
+          "validar": true
+        },
+        {
+          "nome": "Troféu de corrida em acrílico",
+          "categoria": "Premiações",
+          "descricao": "Troféu recortado em acrílico para evento esportivo.",
+          "imagem": {
+            "src": "/assets/ant_trofeu_01.jpg",
+            "alt": "Troféus de acrílico verde e preto com silhuetas de corredores, da Corrida da Independência, de São Félix"
+          },
+          "validar": true
+        },
+        {
+          "nome": "Plotagem veicular",
+          "categoria": "Veículos",
+          "descricao": "Adesivação aplicada em carro.",
+          "imagem": {
+            "src": "/assets/ant_plotagem_03.png",
+            "alt": "Carro azul com plotagem veicular de duas mulheres sorrindo e o texto WiFi inteligente"
+          },
+          "validar": true
+        },
+        {
+          "nome": "Placas Pix em acrílico",
+          "categoria": "Balcão",
+          "descricao": "Placas com QR Code para pagamento por Pix.",
+          "imagem": {
+            "src": "/assets/ant_placapix_02.png",
+            "alt": "Duas placas de acrílico com QR Code do Pix, uma em rosa espelhado e outra em dourado espelhado"
+          },
+          "validar": true
+        },
+        {
+          "nome": "Chaveiro gravado",
+          "categoria": "Presentes",
+          "descricao": "Chaveiro de acrílico com gravação de nome.",
+          "imagem": {
+            "src": "/assets/ant_chaveiros_00.jpg",
+            "alt": "Vários chaveiros redondos de acrílico com estampa floral e o texto Família Viñena, Encontro das Primas"
+          },
+          "validar": true
+        },
+        {
+          "nome": "Calendário com ímã",
+          "categoria": "Brindes",
+          "descricao": "Calendário personalizado em acrílico com ímã.",
+          "imagem": {
+            "src": "/assets/ant_calendario_05.png",
+            "alt": "Mão segurando um calendário de ímã de janeiro de 2025 com os contatos da Point Virtual"
+          },
+          "validar": true
+        }
+      ]
+    },
+    "sobre": {
+      "titulo": "Feita na região, para quem faz negócio na região",
+      "texto": "A Point Virtual é uma gráfica e empresa de comunicação visual que atende **Cachoeira, Muritiba e todo o Recôncavo Baiano**.\nCuidamos da arte, da produção e da instalação: de um letreiro de fachada a um chaveiro de acrílico.",
+      "imagem": {
+        "src": "/assets/feita_pra.jpg",
+        "alt": "Grupo de pessoas de camisa vermelha com a marca da Point Virtual, reunido dentro da loja, com balões vermelhos ao fundo"
+      },
+      "pontos_de_valor": [
+        {
+          "titulo": "Da arte à instalação",
+          "descricao": "Criação da arte, produção e instalação.",
+          "ilustracao": {
+            "src": "/assets/ilus_Da arte_00.png",
+            "alt": "Ilustração de um designer de óculos vermelhos desenhando uma arte no papel, com uma lâmpada acesa de ideia"
+          },
+          "validar": false
+        },
+        {
+          "titulo": "Atendimento direto",
+          "descricao": "Você fala com a equipe pelo WhatsApp, sem formulário.",
+          "ilustracao": {
+            "src": "/assets/ilus_Atendimento direto_01.png",
+            "alt": "Ilustração de um atendente de óculos vermelhos acenando diante do computador, com balões de conversa"
+          },
+          "validar": false
+        },
+        {
+          "titulo": "Perto de você",
+          "descricao": "Atendemos Cachoeira, Muritiba e o Recôncavo Baiano.",
+          "ilustracao": {
+            "src": "/assets/ilus_Perto_De_vc_02.png",
+            "alt": "Ilustração de dois vizinhos conversando, um com a mão no ombro do outro, com um marcador de localização acima"
+          },
+          "validar": false
+        }
+      ]
+    },
+    "contato": {
+      "titulo": "Fale com a Point Virtual",
+      "subtexto": "Chame no WhatsApp para pedir o seu orçamento. Se preferir ir pessoalmente, confirme o horário de atendimento pelo WhatsApp.",
+      "unidades": [
+        {
+          "nome": "Loja Centro",
+          "telefone": "(75) 98136-4285",
+          "endereco": "R. Otávio Tosta - Centro, Muritiba - BA, 44340-000",
+          "fonte": "Ficha da empresa no Google (print enviado pelo usuário)",
+          "validar": false
+        },
+        {
+          "nome": "Loja Manteiga",
+          "telefone": "(75) 98122-9911",
+          "endereco": null,
+          "fonte": "Arte de calendário no Instagram",
+          "validar": true
+        }
+      ],
+      "cta": "@ctas.principal"
+    },
+    "faq": {
+      "titulo": "Perguntas frequentes",
+      "perguntas": [
+        {
+          "pergunta": "Quais cidades vocês atendem?",
+          "resposta": "Atendemos Cachoeira, Muritiba e todo o Recôncavo Baiano. Se a sua cidade for outra, chame no WhatsApp e conte o que precisa.",
+          "validar": false
+        },
+        {
+          "pergunta": "Vocês criam a arte ou preciso levar pronta?",
+          "resposta": "A Point Virtual também cria artes para redes sociais, datas e campanhas. Se você já tem a sua, é só mostrar no WhatsApp.",
+          "resposta_neutra": "A Point também cria a arte. Conte o que você precisa pelo WhatsApp e combine os detalhes.",
+          "validar": true
+        },
+        {
+          "pergunta": "Como peço um orçamento?",
+          "resposta": "Chame no WhatsApp, diga o que quer produzir e, se tiver, envie medidas e fotos. A equipe responde com os próximos passos.",
+          "validar": false
+        },
+        {
+          "pergunta": "Quanto tempo leva para ficar pronto?",
+          "resposta": "Depende do produto e da quantidade. Um brinde leva menos tempo do que uma fachada com instalação. Confirmamos o prazo junto com o orçamento.",
+          "resposta_neutra": "O prazo depende do serviço e da quantidade. Chame no WhatsApp: confirmamos junto com o orçamento.",
+          "validar": true
+        },
+        {
+          "pergunta": "Vocês fazem instalação?",
+          "resposta": "Sim, a Point faz instalação. Conte o que você precisa pelo WhatsApp e combine os detalhes.",
+          "validar": false
+        }
+      ]
+    },
+    "cta_final": {
+      "headline": "Vamos colocar a sua marca {1} na rua?",
+      "subtexto": "Conte o que você precisa e peça seu orçamento pelo WhatsApp.",
+      "miniatura": {
+        "fotos": [
+          {
+            "src": "/assets/hero_image_gif01.jpg",
+            "alt": "Panfletos empilhados com arte de oferta de pastel"
+          },
+          {
+            "src": "/assets/hero_image_gif02.jpg",
+            "alt": "Caneca personalizada com nome e ilustrações"
+          },
+          {
+            "src": "/assets/hero_image_gif03.jpg",
+            "alt": "Capelinhas de MDF com imagem de Santo Antônio"
+          },
+          {
+            "src": "/assets/hero_image_gif04.jpg",
+            "alt": "Boneco personalizado em 3D de homem de terno"
+          },
+          {
+            "src": "/assets/hero_image_gif00.jpg",
+            "alt": "Fachada de loja com letreiro luminoso e vitrine"
+          }
+        ]
+      },
+      "cta": "@ctas.principal"
+    },
+    "footer": {
+      "descricao_curta": "Gráfica rápida e comunicação visual em Muritiba, Cachoeira e Recôncavo Baiano.",
+      "colunas": [
+        {
+          "titulo": "Serviços",
+          "links": [
+            {
+              "rotulo": "Letreiros e fachadas",
+              "destino": "#servicos"
+            },
+            {
+              "rotulo": "Plotagem e adesivos",
+              "destino": "#servicos"
+            },
+            {
+              "rotulo": "Acrílico e troféus",
+              "destino": "#servicos"
+            },
+            {
+              "rotulo": "Painel de LED",
+              "destino": "#painel-led"
+            }
+          ]
+        },
+        {
+          "titulo": "Contato",
+          "links": [
+            {
+              "rotulo": "WhatsApp",
+              "destino": "https://wa.link/kww6uf"
+            },
+            {
+              "rotulo": "Instagram",
+              "destino": "https://www.instagram.com/pointcomunvisual/"
+            },
+            {
+              "rotulo": "Lojas",
+              "destino": "#contato"
+            }
+          ]
+        }
+      ],
+      "links_legais": [
+        {
+          "rotulo": "Política de Privacidade",
+          "destino": "/privacidade"
+        },
+        {
+          "rotulo": "Termos de Uso",
+          "destino": "/termos"
+        }
+      ],
+      "copyright": "© 2026 Point Virtual. Todos os direitos reservados."
+    }
+  },
+  "paginas_legais": {
+    "rascunho_aviso": "Rascunho — pendente de revisão jurídica",
+    "rascunho_detalhe": "Este texto é um rascunho técnico, escrito a partir do que o site faz hoje. Não é parecer jurídico e não pode ser publicado sem revisão humana e jurídica (LGPD). Os campos em destaque [A PREENCHER] precisam ser preenchidos antes da publicação.",
+    "privacidade": {
+      "titulo": "Política de Privacidade",
+      "rascunho": true,
+      "atualizacao": "Última atualização: [A PREENCHER: data]",
+      "secoes": [
+        {
+          "titulo": "Quem somos",
+          "paragrafos": [
+            "Esta política explica como o site da Point Virtual trata dados pessoais. A Point Virtual é uma gráfica e empresa de comunicação visual que atende Muritiba, Cachoeira e o Recôncavo Baiano.",
+            "Responsável pelo tratamento dos dados (controlador):"
+          ],
+          "itens": [
+            "Razão social: [A PREENCHER: razão social]",
+            "CNPJ: [A PREENCHER: CNPJ]",
+            "Endereço da sede: [A PREENCHER: endereço]",
+            "Encarregado pelo tratamento de dados: [A PREENCHER: nome do encarregado]",
+            "Canal para pedidos sobre dados pessoais: [A PREENCHER: e-mail ou outro canal do encarregado]"
+          ]
+        },
+        {
+          "titulo": "O que este site faz e o que ele não faz",
+          "itens": [
+            "É um site informativo. Não tem formulário, login, cadastro, loja virtual nem área restrita.",
+            "Não usa ferramentas de análise de acesso (analytics), pixels de anúncios nem cookies de terceiros.",
+            "As fontes de texto são servidas pelo próprio site: o seu navegador não busca fontes em serviços externos.",
+            "Se o site passar a usar analytics, formulário, mapa incorporado ou outro recurso que trate dados, esta política será atualizada antes."
+          ]
+        },
+        {
+          "titulo": "Dados que podem ser tratados",
+          "itens": [
+            "Registros de acesso (logs) do provedor de hospedagem: endereço IP, data e hora, páginas acessadas e tipo de navegador. Servem para o funcionamento e a segurança do site.",
+            "Dados que você enviar por WhatsApp ou telefone: nome, número de telefone, mensagens, medidas, fotos e artes enviadas para pedir um orçamento. Eles chegam à Point Virtual por iniciativa sua, quando você conversa com a equipe.",
+            "O site em si não coleta nome, e-mail nem telefone."
+          ],
+          "paragrafos": [
+            "O provedor de hospedagem ainda não foi definido: [A PREENCHER: provedor de hospedagem e país dos servidores]."
+          ]
+        },
+        {
+          "titulo": "Links para outros serviços",
+          "paragrafos": [
+            "O site tem links que levam a serviços de terceiros:"
+          ],
+          "itens": [
+            "WhatsApp: o botão de pedir orçamento abre uma conversa com a Point Virtual em nova aba.",
+            "Google Maps: o link para ver a loja no mapa abre o Google Maps em nova aba. O site não incorpora mapa.",
+            "Instagram: o link leva ao perfil da Point Virtual em nova aba."
+          ]
+        },
+        {
+          "titulo": "Para que usamos os dados e em que base legal",
+          "paragrafos": [
+            "Usamos os dados que você envia pelo WhatsApp para responder ao seu pedido, preparar o orçamento e, se você fechar o pedido, produzir e entregar o serviço. Usamos os registros de acesso para manter o site funcionando e seguro.",
+            "Bases legais (LGPD, art. 7º): [A PREENCHER: confirmar na revisão jurídica]."
+          ]
+        },
+        {
+          "titulo": "Compartilhamento",
+          "paragrafos": [
+            "O site não compartilha dados com ferramentas de publicidade. Os dados podem ser tratados pelo provedor de hospedagem (registros de acesso) e pelos serviços de mensagem que você usa para falar com a gente, como o WhatsApp.",
+            "Outros operadores, se houver: [A PREENCHER: contabilidade, entrega ou outros]."
+          ]
+        },
+        {
+          "titulo": "Por quanto tempo guardamos",
+          "paragrafos": [
+            "Prazo de guarda dos registros de acesso e das conversas de orçamento: [A PREENCHER: prazos]."
+          ]
+        },
+        {
+          "titulo": "Transferência para fora do Brasil",
+          "paragrafos": [
+            "O WhatsApp e o provedor de hospedagem podem tratar dados fora do Brasil. Países e salvaguardas: [A PREENCHER: confirmar depois de definir o provedor]."
+          ]
+        },
+        {
+          "titulo": "Seus direitos",
+          "paragrafos": [
+            "Pela Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode pedir:"
+          ],
+          "itens": [
+            "confirmação de que tratamos dados seus;",
+            "acesso aos dados;",
+            "correção de dados incompletos ou desatualizados;",
+            "anonimização, bloqueio ou eliminação de dados desnecessários;",
+            "portabilidade dos dados;",
+            "informação sobre com quem compartilhamos os dados;",
+            "revogação do consentimento, quando ele for a base do tratamento;",
+            "oposição a um tratamento."
+          ]
+        },
+        {
+          "titulo": "Como exercer seus direitos",
+          "paragrafos": [
+            "Faça o pedido pelo canal: [A PREENCHER: canal do encarregado]. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD)."
+          ]
+        },
+        {
+          "titulo": "Cookies",
+          "paragrafos": [
+            "No momento, o site não define cookies próprios nem de terceiros. [A PREENCHER: confirmar na revisão técnica antes de publicar.]"
+          ]
+        },
+        {
+          "titulo": "Segurança",
+          "paragrafos": [
+            "Conexão segura (HTTPS) e demais medidas de segurança: [A PREENCHER: confirmar depois de definir domínio e hospedagem]."
+          ]
+        },
+        {
+          "titulo": "Mudanças nesta política",
+          "paragrafos": [
+            "Esta política pode mudar. A data da última atualização fica no topo da página."
+          ]
+        }
+      ]
+    },
+    "termos": {
+      "titulo": "Termos de Uso",
+      "rascunho": true,
+      "atualizacao": "Última atualização: [A PREENCHER: data]",
+      "secoes": [
+        {
+          "titulo": "Aceite",
+          "paragrafos": [
+            "Ao usar este site, você concorda com estes termos. Se não concordar, não use o site."
+          ]
+        },
+        {
+          "titulo": "O que é este site",
+          "paragrafos": [
+            "O site apresenta os serviços da Point Virtual (gráfica rápida e comunicação visual) e leva o visitante ao WhatsApp para pedir um orçamento. Ele não vende online, não tem carrinho e não recebe pagamentos."
+          ]
+        },
+        {
+          "titulo": "Quem é o responsável",
+          "itens": [
+            "Razão social: [A PREENCHER: razão social]",
+            "CNPJ: [A PREENCHER: CNPJ]",
+            "Endereço da sede: [A PREENCHER: endereço]",
+            "Contato: [A PREENCHER: canal oficial de contato]"
+          ]
+        },
+        {
+          "titulo": "Orçamentos e pedidos",
+          "paragrafos": [
+            "Preços, prazos e condições são combinados com a equipe pelo WhatsApp. O site não publica preços. Nada no site é oferta fechada nem promessa de prazo."
+          ]
+        },
+        {
+          "titulo": "Informações e imagens do site",
+          "paragrafos": [
+            "Procuramos manter as informações corretas, mas elas podem mudar sem aviso. As fotos de trabalhos ilustram os serviços.",
+            "Uso de imagens de clientes e de trabalhos: [A PREENCHER: confirmar autorizações antes de publicar fotos]."
+          ]
+        },
+        {
+          "titulo": "Propriedade intelectual",
+          "paragrafos": [
+            "Textos, logotipo, marca e imagens do site pertencem à Point Virtual ou são usados com autorização. Titular dos direitos da marca: [A PREENCHER].",
+            "Não copie nem use esse material sem permissão."
+          ]
+        },
+        {
+          "titulo": "Links de terceiros",
+          "paragrafos": [
+            "O site tem links para WhatsApp, Google Maps e Instagram. Esses serviços têm termos próprios e a Point Virtual não responde por eles."
+          ]
+        },
+        {
+          "titulo": "Uso adequado",
+          "paragrafos": [
+            "Não use o site para fraudar, atacar, derrubar ou copiar o conteúdo em massa."
+          ]
+        },
+        {
+          "titulo": "Responsabilidade",
+          "paragrafos": [
+            "O site é oferecido como está, sem garantia de funcionar sem interrupções. Limites de responsabilidade: [A PREENCHER: revisão jurídica]."
+          ]
+        },
+        {
+          "titulo": "Privacidade",
+          "paragrafos": [
+            "O tratamento de dados pessoais está descrito na Política de Privacidade, disponível no rodapé do site."
+          ]
+        },
+        {
+          "titulo": "Mudanças nestes termos",
+          "paragrafos": [
+            "Estes termos podem mudar. A data da última atualização fica no topo da página."
+          ]
+        },
+        {
+          "titulo": "Lei aplicável e foro",
+          "paragrafos": [
+            "Estes termos seguem as leis do Brasil. Foro: [A PREENCHER: comarca — ainda não definida]."
+          ]
+        }
+      ]
+    }
+  },
+  "microcopy": {
+    "cookies": {
+      "texto": "Usamos cookies para o site funcionar e, se você aceitar, para entender como ele é usado.",
+      "aceitar": "Aceitar",
+      "recusar": "Recusar",
+      "preferencias": "Preferências",
+      "link": "/privacidade",
+      "validar": true
+    },
+    "pagina_404": {
+      "titulo": "Essa página não foi encontrada",
+      "texto": "O endereço pode ter mudado ou não existe mais. Volte para o início ou fale com a gente.",
+      "cta": {
+        "texto": "Voltar ao início",
+        "destino": "/"
+      }
+    },
+    "acessibilidade": {
+      "pular_para_conteudo": "Pular para o conteúdo",
+      "abrir_menu": "Abrir menu",
+      "fechar_menu": "Fechar menu",
+      "menu_principal": "Principal",
+      "menu_titulo": "Menu",
+      "servicos_proximo": "Ver próximo serviço",
+      "servicos_voltar": "Voltar ao primeiro serviço"
+    },
+    "midia": {
+      "foto_em_breve": "foto em breve"
+    },
+    "contato": {
+      "ver_no_mapa": "Ver no mapa",
+      "ligar_para": "Ligar para"
+    },
+    "validar": {
+      "rotulo": "A validar"
+    }
+  },
+  "meta": {
+    "gerado_em": "2026-11-12",
+    "versao": "1",
+    "pendencias_validar": [
+      {
+        "caminho": "site.contato.whatsapp",
+        "motivo": "número do WhatsApp ausente; só o link da bio (wa.link) foi visto. Confirmar número e se o link já abre com mensagem",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.hero.prova_rapida",
+        "motivo": "'+ de 15 anos' vem da bio do Instagram; confirmar com o cliente",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.painel_led.destaques",
+        "motivo": "números e local vêm de uma arte de divulgação (parte do texto cortado no print); confirmar valores atuais",
+        "ocorrencias": 3
+      },
+      {
+        "caminho": "secoes.como_funciona",
+        "motivo": "processo em 3 passos é o padrão de atendimento deduzido; confirmar com o cliente",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.portfolio.itens",
+        "motivo": "trabalhos vêm do Instagram; precisam de foto em alta e autorização do cliente",
+        "ocorrencias": 6
+      },
+      {
+        "caminho": "secoes.sobre.imagem",
+        "motivo": "foto de grupo (feita_pra.jpg) com várias pessoas, uma criança e máscaras (2020–2021): confirmar autorização de imagem e se o grupo é a equipe (o alt não diz 'equipe')",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.contato.unidades",
+        "motivo": "2ª loja: nome e telefone lidos de uma arte de calendário e sem endereço. Conferir qual loja é 'Centro' e qual é 'Manteiga' (o Google mostra o 98136-4285 no Centro, e a arte parecia rotular esse número como 'Manteiga')",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.faq.perguntas",
+        "motivo": "respostas deduzidas; confirmar (arte pronta, prazo). Em produção entram as versões neutras (`resposta_neutra`); as originais só aparecem no modo revisão. A resposta sobre instalação deixou de ser `validar` (alinhada ao hero e à faixa)",
+        "ocorrencias": 2
+      },
+      {
+        "caminho": "paginas_legais",
+        "motivo": "Política de Privacidade e Termos são rascunho técnico: preencher todos os [A PREENCHER] (razão social, CNPJ, encarregado, canal LGPD, provedor, prazos, foro) e obter revisão humana/jurídica (LGPD). Enquanto `rascunho: true` as páginas mostram o aviso no topo e saem com noindex",
+        "ocorrencias": 2
+      },
+      {
+        "caminho": "microcopy.cookies",
+        "motivo": "depende de haver analytics/mapa; texto é rascunho e exige revisão jurídica",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "site.dominio",
+        "motivo": "domínio e hospedagem não definidos",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "site.contato.horarios",
+        "motivo": "o Google só mostra 'Abre às 14:00' (um dia); não há grade semanal. Omitida do JSON; o site manda confirmar o horário pelo WhatsApp. Perguntar ao cliente quando puder",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.contato.unidades[1].endereco",
+        "motivo": "endereço da 2ª loja não encontrado (null)",
+        "ocorrencias": 1
+      },
+      {
+        "caminho": "secoes.depoimentos",
+        "motivo": "seção não incluída: sem depoimentos reais autorizados (destaque 'Feedback' do Instagram é a fonte provável)",
+        "ocorrencias": 1
+      }
+    ]
+  }
+}

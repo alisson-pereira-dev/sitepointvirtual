@@ -1,0 +1,157 @@
+/* Miniatura dentro da frase. Tamanho em `em` para acompanhar a fonte (≈ 40 px a 360 px, ≈ 76 px no desktop).
+   Camadas: .mini = layout + entrada (opacity/scale) · .giro = inclinação + hover · .foto = ciclo (opacity). */
+.mini {
+  --slot: 1.5s; /* tempo de cada foto; o ciclo inteiro é slot × nº de fotos */
+  --ciclo: calc(var(--slot) * var(--n));
+  --zoom-hover: 2.4; /* só no desktop com mouse: ~76 px → ~180 px */
+
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-inline: 0.06em;
+  vertical-align: -0.12em;
+  animation: entra var(--dur-base) var(--ease-out) both;
+  animation-delay: calc(var(--i) * var(--stagger-step));
+}
+
+.giro {
+  position: absolute;
+  inset: 0;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.esq .giro {
+  transform: rotate(calc(var(--tilt) * -1));
+}
+
+.dir .giro {
+  transform: rotate(var(--tilt));
+}
+
+.foto {
+  position: absolute;
+  inset: 0;
+}
+
+/* Mobile e fallback: só a 1ª foto, parada */
+.foto:not(:first-child) {
+  opacity: 0;
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Desktop: entrada mais longa, ciclo de fotos e endireitar no hover */
+@media (min-width: 1024px) {
+  .mini {
+    animation-duration: var(--dur-slow);
+  }
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  /* Hover: a miniatura se endireita e cresce por cima do texto (como na referência). O cartão sobe de camada para não ficar sob a frase. */
+  .mini:hover {
+    z-index: 2;
+  }
+
+  .mini:hover .giro {
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-3);
+    transform: rotate(0) scale(var(--zoom-hover));
+  }
+
+  /* A animação sobrescreve o `opacity: 0` estático das fotos 2 em diante */
+  .mini[data-n="2"] .foto {
+    animation: ciclo-2 var(--ciclo) linear infinite;
+    animation-delay: calc(var(--ordem) * var(--ciclo) / var(--n) - var(--ciclo) - var(--atraso));
+  }
+
+  .mini[data-n="3"] .foto {
+    animation: ciclo-3 var(--ciclo) linear infinite;
+    animation-delay: calc(var(--ordem) * var(--ciclo) / var(--n) - var(--ciclo) - var(--atraso));
+  }
+
+  .mini[data-n="5"] .foto {
+    animation: ciclo-5 var(--ciclo) linear infinite;
+    animation-delay: calc(var(--ordem) * var(--ciclo) / var(--n) - var(--ciclo) - var(--atraso));
+  }
+}
+
+/* Com o mouse em cima a troca é seca (sem fade): só o easing da mesma animação muda, então o ciclo não reinicia
+   nem sai de sincronia com as outras miniaturas. Cada foto continua trocando no mesmo instante de antes. */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .mini:hover .foto {
+    animation-timing-function: steps(1, end);
+  }
+}
+
+/* Cada foto fica visível por 1/n do ciclo, com crossfade curto nas pontas */
+@keyframes ciclo-2 {
+  0%,
+  42% {
+    opacity: 1;
+  }
+
+  50%,
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 5 fotos, 20% do ciclo cada (1,5 s), crossfade de 4% (0,3 s) */
+@keyframes ciclo-5 {
+  0%,
+  16% {
+    opacity: 1;
+  }
+
+  20%,
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ciclo-3 {
+  0%,
+  29% {
+    opacity: 1;
+  }
+
+  33%,
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Reduced-motion: já no lugar, sem inclinação, sem ciclo */
+@media (prefers-reduced-motion: reduce) {
+  .mini {
+    animation: none;
+  }
+
+  .giro {
+    transform: none;
+  }
+}

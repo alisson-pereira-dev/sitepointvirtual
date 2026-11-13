@@ -1,0 +1,96 @@
+/* Mobile: foto → título → parágrafos → pontos. Desktop: texto (6/12) e foto (6/12) lado a lado,
+   pontos em 3 colunas abaixo com filete de 1 px. No HTML o texto vem antes da foto (o título abre a seção). */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.foto {
+  order: -1;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 65ch;
+}
+
+.titulo {
+  margin-block-end: var(--space-2);
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  text-wrap: balance;
+}
+
+.paragrafo {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+}
+
+.pontos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.ponto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.pontoTitulo {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-body);
+}
+
+.pontoDescricao {
+  color: var(--color-text-muted);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Ilustração de traço com fundo transparente: sem máscara nem raio (não é foto). No mobile fica contida; a partir de 768 px ocupa a coluna. */
+.ilustracao {
+  display: block;
+  width: 100%;
+  max-inline-size: calc(var(--space-9) * 1.25);
+  height: auto;
+  margin-block-end: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .ilustracao {
+    max-inline-size: calc(var(--space-10) * 1.25);
+  }
+
+  .pontos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-7);
+    row-gap: var(--space-8);
+    align-items: center;
+  }
+
+  .foto {
+    order: 0;
+  }
+
+  .pontos {
+    grid-column: 1 / -1;
+  }
+}

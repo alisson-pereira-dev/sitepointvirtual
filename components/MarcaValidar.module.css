@@ -1,0 +1,15 @@
+.marca {
+  display: inline-block;
+  margin-inline-start: var(--space-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-warning);
+  color: var(--color-warning-text);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-body);
+  vertical-align: middle;
+  white-space: nowrap;
+}

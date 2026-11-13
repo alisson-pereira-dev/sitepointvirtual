@@ -1,0 +1,103 @@
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.item {
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-alt);
+}
+
+.cabecalho {
+  margin: 0;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Linha inteira clicável, altura mínima 56 px */
+.gatilho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: calc(var(--space-7) + var(--space-2));
+  padding: var(--space-3) var(--space-5);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-body);
+  text-align: start;
+  cursor: pointer;
+}
+
+/* O anel de foco fica por dentro do bloco arredondado */
+.gatilho:focus-visible {
+  outline-offset: -3px;
+}
+
+.gatilho:active {
+  transform: scale(0.99);
+}
+
+.seta {
+  display: inline-flex;
+  flex: none;
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+
+.gatilho[data-state="open"] .seta {
+  transform: rotate(180deg);
+}
+
+/* R17: abertura por grid-template-rows 0fr → 1fr. Fechado fica `visibility: hidden` (fora da árvore de acessibilidade). */
+.conteudo {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--dur-base) var(--ease-standard),
+    visibility 0s linear var(--dur-base);
+}
+
+.conteudo[data-state="open"] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--dur-base) var(--ease-standard),
+    visibility 0s linear 0s;
+}
+
+.interno {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.resposta {
+  padding: 0 var(--space-5) var(--space-5);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Sem JS: sem setas, todas as respostas abertas */
+:global(html:not(.js)) .conteudo {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+:global(html:not(.js)) .seta {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conteudo,
+  .conteudo[data-state="open"],
+  .seta {
+    transition: none;
+  }
+}
